@@ -54,12 +54,16 @@ buildscript {
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
     classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.10.1"
     classpath "com.android.tools.build:gradle:4.0.1"
+    classpath 'com.tencent.muandroid:muandroid-gradle-plugin:latest.release'
+//    classpath 'com.tencent.muandroid:muandroid-gradle-plugin:0.3.9.1'
     classpath deps.bnd
   }
 
   repositories {
     mavenCentral()
     gradlePluginPortal()
+    maven { url "http://maven.oa.com/nexus/content/repositories/thirdparty" }
+    maven { url "https://mirrors.tencent.com/repository/maven/thirdparty" }
     google()
   }
 }
@@ -101,6 +105,8 @@ allprojects {
     maven {
       url 'https://dl.bintray.com/kotlin/dokka'
     }
+
+    maven { url "http://maven.oa.com/nexus/content/repositories/thirdparty" }
     google()
   }
 
@@ -393,3 +399,5 @@ ext.baselineJar = { project, version ->
   }
 }
 ext.baselineVersion = "3.14.1"
+
+apply plugin: 'com.tencent.muandroid'
