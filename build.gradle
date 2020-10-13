@@ -400,4 +400,4 @@ ext.baselineJar = { project, version ->
 }
 ext.baselineVersion = "3.14.1"
 
-apply plugin: 'com.tencent.muandroid'
+//apply plugin: 'com.tencent.muandroid'
